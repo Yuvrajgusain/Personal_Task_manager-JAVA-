@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="app">
+    <header>
+        <h1>Personal Task Manager</h1>
+        <p>Manage your daily tasks with priority and status tracking.</p>
+    </header>
+
+    <section class="card form-card">
+        <h2 id="formTitle">Add New Task</h2>
+
+        <input type="hidden" id="taskId">
+
+        <input type="text" id="title" placeholder="Task title">
+        <textarea id="description" placeholder="Task description"></textarea>
+
+        <div class="row">
+            <select id="status">
+                <option value="Pending">Pending</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Completed">Completed</option>
+            </select>
+
+            <select id="priority">
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+            </select>
+        </div>
+
+        <button onclick="saveTask()" id="saveBtn">Add Task</button>
+        <button onclick="resetForm()" class="cancel-btn">Cancel</button>
+    </section>
+
+    <section class="tasks-header">
+        <h2>All Tasks</h2>
+        <button onclick="loadTasks()">Refresh</button>
+    </section>
+
+    <section id="taskList" class="task-grid"></section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
